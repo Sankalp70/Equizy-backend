@@ -14,7 +14,11 @@ dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
 app.use(
-  cors()
+  cors({
+    origin: ["https://equizy.vercel.app","https://equizy.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
 );
 
 app.get("/", (req, res) => {
